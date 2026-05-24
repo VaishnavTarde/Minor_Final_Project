@@ -1,0 +1,27 @@
+Loading .env from: C:\Users\HP\OneDrive\Desktop\ST\server\.env
+[dotenv@17.2.3] injecting env (9) from server\.env [2m-- tip: ⚙️  write to custom object with { processEnv: myObject }[0m
+Environment Variables Check:
+MONGO_URI: SET
+EMAIL_USER: SET
+EMAIL_PASS: SET
+Connecting to MongoDB...
+MongoDB Connected.
+Triggering Daily Reminders (Manual Override)...
+[Cron] Attempting to run daily event reminder job (Manual: true)...
+[Cron] Fetching events between 2026-02-16T18:30:00.000Z and 2026-02-20T18:30:00.000Z...
+[Cron] Found 1 standard events and 1 slider events.
+[Cron] Sending reminders for 1 events to 7 users...
+Email sent: 250 2.0.0 OK  1771299945 98e67ed59e1d1-356a8788ef8sm8335645a91.5 - gsmtp
+Email sent: 250 2.0.0 OK  1771299950 d9443c01a7336-2ad1aadbb9bsm79839205ad.62 - gsmtp
+Email sent: 250 2.0.0 OK  1771299954 98e67ed59e1d1-35662f8cc57sm21576659a91.13 - gsmtp
+Email sent: 250 2.0.0 OK  1771299966 41be03b00d2f7-c6e52fe2300sm8778619a12.8 - gsmtp
+Email sent: 250 2.0.0 OK  1771299974 d9443c01a7336-2ad1a7132fasm90670635ad.23 - gsmtp
+Email sent: 250 2.0.0 OK  1771299979 d2e1a72fcca58-824c6b9a661sm11567726b3a.50 - gsmtp
+Email sent: 250 2.0.0 OK  1771299985 d9443c01a7336-2ad1a73b0fesm88177885ad.38 - gsmtp
+[Cron] Sent 7 emails for event: Shivjayanti
+[Cron] Successfully processed reminders for 1 events.
+Result: {
+  "success": true,
+  "count": 1
+}
+Closing connection...
