@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    // baseURL: 'https://minor-vt.onrender.com/api',
-    baseURL: 'http://localhost:5000/api', // Switched to localhost for local testing
+    baseURL: `${import.meta.env.VITE_API_URL || 'https://minor-final-project.onrender.com'}/api`,
     headers: {
         'Content-Type': 'application/json',
     },

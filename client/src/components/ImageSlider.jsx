@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trash2, Plus, Upload, X, Link as LinkIcon, Edit2 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://minor-final-project.onrender.com';
+
 const ImageSlider = () => {
     const [slides, setSlides] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +44,7 @@ const ImageSlider = () => {
 
     const fetchSlides = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/slider');
+            const res = await fetch(`${API_URL}/api/slider`);
             const data = await res.json();
             if (data.success) {
                 setSlides(data.data);
@@ -98,7 +100,7 @@ const ImageSlider = () => {
                     setUploading(false);
                     return;
                 }
-                const uploadRes = await fetch('http://localhost:5000/api/upload', {
+                const uploadRes = await fetch(`${API_URL}/api/upload`, {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${token}` },
                     body: formData
@@ -132,7 +134,7 @@ const ImageSlider = () => {
 
             // Add Slide to DB
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5000/api/slider', {
+            const res = await fetch(`${API_URL}/api/slider`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -190,7 +192,7 @@ const ImageSlider = () => {
         if (!window.confirm("Are you sure you want to remove this slide?")) return;
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch(`http://localhost:5000/api/slider/${id}`, {
+            const res = await fetch(`${API_URL}/api/slider/${id}`, {
                 method: 'DELETE',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
